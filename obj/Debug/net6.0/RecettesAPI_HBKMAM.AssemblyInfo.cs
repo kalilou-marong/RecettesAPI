@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecettesAPI_HBKMAM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1adee979e447bd594655fc7f33162b952998414")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecettesAPI_HBKMAM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecettesAPI_HBKMAM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
