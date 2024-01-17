@@ -12,7 +12,8 @@ public class RecettesAPIContext : DbContext
 	public DbSet<Recipe> Recette { get; set; }
 	public DbSet<Ingredient> Ingredient { get; set; }
 	public DbSet<Categorie> Categorie { get; set; }
+	public DbSet<IngredientAmount> IngredientAmount { get; set; }
 
-	protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
+protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
 		=> optionsbuilder.UseNpgsql("host=localhost:5433;database=RecettesAPI-db;username=recettesAPI_dev;password=pg_strong_password");
 }

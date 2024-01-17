@@ -9,6 +9,7 @@ public class Recipe
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id_Recipe { get; set; }
+
     [ForeignKey("Id_categorie")]
 	public int Id_categorie { get; set; }
 	public string Photo_url { get; set; }
