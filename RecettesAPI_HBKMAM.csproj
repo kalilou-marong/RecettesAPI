@@ -11,8 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Data\dataArrays_Categorie.json" />
+    <Content Remove="Data\dataArrays_Ingredient.json" />
+    <Content Remove="Data\dataArrays_Recipe.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
@@ -25,6 +32,13 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\dataArrays_Categorie.json" />
+    <None Include="Data\dataArrays_Ingredient.json" />
+    <None Include="Data\dataArrays_Recipe.json" />
   </ItemGroup>
 
 </Project>
