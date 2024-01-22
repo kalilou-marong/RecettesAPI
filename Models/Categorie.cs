@@ -1,12 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace RecettesAPI_HBKMAM.Models;
 
 public class Categorie
 {
     [Key]
-    public int Id_categorie { get; set; }
-    public string Name { get; set; }
-    public string Photo_url { get; set; }
+
+	public int Id_categorie { get; set; }
+
+
+	public string name { get; set; }
+
+
+	public string photo_url { get; set; }
 
 }
