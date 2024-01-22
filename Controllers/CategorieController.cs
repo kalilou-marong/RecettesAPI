@@ -18,7 +18,7 @@ namespace RecettesAPI_HBKMAM.Controllers
         [HttpGet]
         public IActionResult GetCategorie()
         {
-            var categorie = _context.Categorie.ToList();
+            var categorie = _context.Category.ToList();
             return Ok(categorie);
         }
     }
