@@ -5,8 +5,6 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecettesAPI_HBKMAM", "RecettesAPI_HBKMAM.csproj", "{7B35AA5A-B280-4827-BFF3-531A7E410B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_RecettesAPI", "..\Tests_RecettesAPI\Tests_RecettesAPI.csproj", "{B33A8906-1129-453D-873B-6AF5BC4B111E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{7B35AA5A-B280-4827-BFF3-531A7E410B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B35AA5A-B280-4827-BFF3-531A7E410B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B35AA5A-B280-4827-BFF3-531A7E410B8B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B33A8906-1129-453D-873B-6AF5BC4B111E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B33A8906-1129-453D-873B-6AF5BC4B111E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B33A8906-1129-453D-873B-6AF5BC4B111E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B33A8906-1129-453D-873B-6AF5BC4B111E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
