@@ -16,7 +16,7 @@ namespace RecettesAPI_HBKMAM.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("{Id_categorie}")]
         public IActionResult GetCategorie()
         {
             var categorie = _context.Category.ToList();
@@ -31,7 +31,7 @@ namespace RecettesAPI_HBKMAM.Controllers
             return CreatedAtAction("GetCategorie", new { id = categorie.Id_categorie }, categorie);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{Id_categorie}")]
         public IActionResult UpdateCategorie([FromBody] Categorie categorie)
         {
             _context.Category.Update(categorie);
@@ -39,9 +39,17 @@ namespace RecettesAPI_HBKMAM.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        public IActionResult DeleteCategorie([FromBody] Categorie categorie)
+        [HttpDelete("{Id_categorie}")]
+        public IActionResult DeleteIngredient(int id_categorie)
         {
+
+            var categorie = _context.Category.Find(id_categorie);
+
+            if (categorie == null)
+            {
+                return NotFound();
+            }
+
             _context.Category.Remove(categorie);
             _context.SaveChanges();
 
