@@ -22,7 +22,14 @@ public class IngredientsController : ControllerBase
 		return Ok(ingredient);
 	}
 
-	[HttpPut]
+	[HttpGet("{ingredient_id}")]
+	public IActionResult GetIngredient(int ingredient_id)
+	{
+		var ingredient = _context.Ingredient.Find(ingredient_id);
+		return Ok(ingredient);
+	}
+
+	[HttpPut("{ingredient_id}")]
 	public IActionResult UpdateIngredient([FromBody] Ingredient ingredient)
 	{
 		_context.Ingredient.Update(ingredient);
@@ -32,7 +39,7 @@ public class IngredientsController : ControllerBase
 
 
 
-		[HttpPost]
+	[HttpPost]
 	public IActionResult AddIngredient([FromBody] Ingredient ingredient)
 	{
 		_context.Ingredient.Add(ingredient);
