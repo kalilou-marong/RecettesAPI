@@ -31,7 +31,7 @@ namespace RecettesAPI_HBKMAM.Controllers
             return CreatedAtAction("GetCategorie", new { id = categorie.Id_categorie }, categorie);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult UpdateCategorie([FromBody] Categorie categorie)
         {
             _context.Category.Update(categorie);
