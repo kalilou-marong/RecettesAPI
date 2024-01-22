@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecettesAPI_HBKMAM.Data;
-using RecettesAPI_HBKMAM.Models; 
+using RecettesAPI_HBKMAM.Models;
 
 namespace RecettesAPI_HBKMAM.Controllers
 {
@@ -50,7 +50,7 @@ namespace RecettesAPI_HBKMAM.Controllers
             return NoContent();
         }
 
-       
+
         [HttpPost]
         public IActionResult CreateRecipe([FromBody] Recipe newRecipe)
         {
