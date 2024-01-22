@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecettesAPI_HBKMAM.Data;
-using RecettesAPI_HBKMAM.Models; // Add this line
+using RecettesAPI_HBKMAM.Models; 
 
 namespace RecettesAPI_HBKMAM.Controllers
 {
@@ -50,31 +50,37 @@ namespace RecettesAPI_HBKMAM.Controllers
             return NoContent();
         }
 
-        // [HttpPut("{id}")]
-        // public IActionResult UpdateRecipe(int id, [FromBody] Recipe updatedRecipe)
-        // {
-        //     var existingRecipe = _context.Recipe
-        //         .Include(r => r.recipe_ingredients)
-        //         .FirstOrDefault(r => r.recipe_id == id);
+       
+        [HttpPost]
+        public IActionResult CreateRecipe([FromBody] Recipe newRecipe)
+        {
 
-        //     if (existingRecipe == null)
-        //     {
-        //         return NotFound();
-        //     }
+            // Validate the input if necessary
 
-        //     // Update properties of existingRecipe with values from updatedRecipe
-        //     existingRecipe.title = updatedRecipe.title;
-        //     existingRecipe.photo_url = updatedRecipe.photo_url;
-        //     existingRecipe.photos_array = updatedRecipe.photos_array;
-        //     existingRecipe.time = updatedRecipe.time;
-        //     existingRecipe.description = updatedRecipe.description;
+            // Add the new recipe to the context
+            _context.Recipe.Add(newRecipe);
+            _context.SaveChanges();
 
-        //     // Update related properties (e.g., Categorie, recipe_ingredients) if needed
+            // Return the created recipe
+            return CreatedAtAction(nameof(GetRecipeById), new { id = newRecipe.recipe_id }, newRecipe);
+        }
 
-        //     _context.SaveChanges();
+        [HttpGet("{id}")]
+        public IActionResult GetRecipeById(int id)
+        {
+            // Retrieve the recipe by ID
+            var recipe = _context.Recipe
+                .Include(r => r.Categorie)
+                .Include(r => r.recipe_ingredients)
+                .FirstOrDefault(r => r.recipe_id == id);
 
-        //     return Ok(existingRecipe);
-        // }
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(recipe);
+        }
 
     }
 }

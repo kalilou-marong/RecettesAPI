@@ -15,7 +15,7 @@ public class Recipe
 	public string photo_url { get; set; }
 	public List<string> photos_array { get; set; }
 	public int time { get; set; }
-	[JsonIgnore]
+	//[JsonIgnore]
 	public List<RecipeIngredient> recipe_ingredients { get; set; }
 	public string description { get; set; }
 }
