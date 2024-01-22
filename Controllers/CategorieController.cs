@@ -30,5 +30,14 @@ namespace RecettesAPI_HBKMAM.Controllers
             _context.SaveChanges();
             return Ok();
         }
+
+        [HttpDelete]
+        public IActionResult DeleteCategorie([FromBody] Categorie categorie)
+        {
+            _context.Category.Remove(categorie);
+            _context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
