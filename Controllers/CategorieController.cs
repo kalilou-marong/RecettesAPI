@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RecettesAPI_HBKMAM.Data;
+using RecettesAPI_HBKMAM.Models;
 
 namespace RecettesAPI_HBKMAM.Controllers
 {
@@ -20,6 +21,14 @@ namespace RecettesAPI_HBKMAM.Controllers
         {
             var categorie = _context.Category.ToList();
             return Ok(categorie);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateCategorie([FromBody] Categorie categorie)
+        {
+            _context.Category.Update(categorie);
+            _context.SaveChanges();
+            return Ok();
         }
     }
 }
