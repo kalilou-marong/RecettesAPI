@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RecettesAPI_HBKMAM.Data;
+using RecettesAPI_HBKMAM.Models;
 
 namespace RecettesAPI_HBKMAM.Controllers;
 
@@ -19,5 +20,13 @@ public class IngredientsController : ControllerBase
 	{
 		var ingredient = _context.Ingredient.ToList();
 		return Ok(ingredient);
+	}
+
+	[HttpPut]
+	public IActionResult AddIngredient([FromBody] Ingredient ingredient)
+	{
+		_context.Ingredient.Add(ingredient);
+		_context.SaveChanges();
+		return Ok();
 	}
 }

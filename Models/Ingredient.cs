@@ -10,5 +10,4 @@ public class Ingredient
 	public int ingredient_id { get; set; }
 	public string name { get; set; }
 	public string photo_url { get; set; }
-	public List<RecipeIngredient> recipe_ingredients { get; set; }
 }
