@@ -4,7 +4,7 @@ using RecettesAPI_HBKMAM.Data;
 
 namespace RecettesAPI_HBKMAM.Controllers
 {
-    [Route("api/categorie")]
+    [Route("categorie")]
     [ApiController]
     public class CategorieController : ControllerBase
     {
