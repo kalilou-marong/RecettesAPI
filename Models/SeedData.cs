@@ -17,7 +17,7 @@ public class SeedData
 			serviceProvider.GetRequiredService<DbContextOptions<RecettesAPIContext>>());
 		context.Database.EnsureCreated();
 
-		if (context.Category.Any())
+		if (context.Categorie.Any())
 		{
 			Console.WriteLine("categorie existe");
 			return;// DB has been seeded
@@ -62,7 +62,7 @@ public class SeedData
 			photo_url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/still-life-of-three-fresh-smoothies-in-front-of-royalty-free-image-561093647-1544042068.jpg?crop=0.715xw:0.534xh;0.0945xw,0.451xh&resize=768:*"
 		};
 
-		context.Category.AddRange(pizzaCategory, mexicanCategory, italianCategory, cookiesCategory, smoothiesCategory);
+		context.Categorie.AddRange(pizzaCategory, mexicanCategory, italianCategory, cookiesCategory, smoothiesCategory);
 
 
 		var oil = new Ingredient
