@@ -23,10 +23,37 @@ public class IngredientsController : ControllerBase
 	}
 
 	[HttpPut]
+	public IActionResult UpdateIngredient([FromBody] Ingredient ingredient)
+	{
+		_context.Ingredient.Update(ingredient);
+		_context.SaveChanges();
+		return Ok();
+	}
+
+
+
+		[HttpPost]
 	public IActionResult AddIngredient([FromBody] Ingredient ingredient)
 	{
 		_context.Ingredient.Add(ingredient);
 		_context.SaveChanges();
+		return Ok();
+	}
+
+	[HttpDelete("{ingredient_id}")]
+	public IActionResult DeleteIngredient(int ingredient_id)
+	{
+
+		var ingredient = _context.Ingredient.Find(ingredient_id);
+
+		if (ingredient == null)
+		{
+			return NotFound(); // Retourne une réponse 404 si l'ingrédient n'est pas trouvé
+		}
+
+		_context.Ingredient.Remove(ingredient);
+		_context.SaveChanges();
+
 		return Ok();
 	}
 }
