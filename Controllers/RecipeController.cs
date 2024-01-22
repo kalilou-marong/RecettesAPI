@@ -33,6 +33,23 @@ namespace RecettesAPI_HBKMAM.Controllers
 
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRecipe(int id)
+        {
+            var recipeToDelete = _context.Recipe
+                .Include(r => r.recipe_ingredients)
+                .FirstOrDefault(r => r.recipe_id == id);
+
+            if (recipeToDelete == null)
+            {
+                return NotFound();
+            }
+            _context.Recipe.Remove(recipeToDelete);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
         // [HttpPut("{id}")]
         // public IActionResult UpdateRecipe(int id, [FromBody] Recipe updatedRecipe)
         // {
