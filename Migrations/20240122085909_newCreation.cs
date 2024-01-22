@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace RecettesAPI_HBKMAM.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedData : Migration
+    public partial class newCreation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

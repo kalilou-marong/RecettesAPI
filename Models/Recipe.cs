@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using RecettesAPI_HBKMAM.Models;
 
@@ -14,6 +15,7 @@ public class Recipe
 	public string photo_url { get; set; }
 	public List<string> photos_array { get; set; }
 	public int time { get; set; }
+	[JsonIgnore]
 	public List<RecipeIngredient> recipe_ingredients { get; set; }
 	public string description { get; set; }
 }

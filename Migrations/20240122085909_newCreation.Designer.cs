@@ -12,8 +12,8 @@ using RecettesAPI_HBKMAM.Data;
 namespace RecettesAPI_HBKMAM.Migrations
 {
     [DbContext(typeof(RecettesAPIContext))]
-    [Migration("20240119150500_SeedData")]
-    partial class SeedData
+    [Migration("20240122085909_newCreation")]
+    partial class newCreation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
